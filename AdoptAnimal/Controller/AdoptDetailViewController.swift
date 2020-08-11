@@ -14,6 +14,7 @@ class AdoptDetailViewController: UIViewController {
     @IBOutlet var headerView: AdoptDetailHeaderView!
     
     var adopt: Adopt?
+    var imageToShare: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class AdoptDetailViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.contentInsetAdjustmentBehavior = .never
+        tableView.separatorStyle = .none
         
         headerView.animalKindLabel.text = adopt?.animalKind.rawValue
         if let animalAge = adopt?.animalAge {
@@ -47,20 +49,46 @@ class AdoptDetailViewController: UIViewController {
             if let data = data {
                 DispatchQueue.main.async {
                     self.headerView.animalImageView.image = UIImage(data: data)
+                    self.imageToShare = UIImage(data: data)
                 }
             }
         }.resume()
     }
     
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        super.viewWillAppear(true)
-    //
-    //        navigationController?.hidesBarsOnSwipe = false
-    //        navigationController?.setNavigationBarHidden(false, animated: true)
-    //    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        tabBarController?.tabBar.isHidden = true
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    @IBAction func callPhone(_ sender: Any) {
+        
+        guard let phoneNumber = adopt?.shelterTel, let url = URL(string: "tel://\(phoneNumber)") else { return }
+        let alert = UIAlertController(title: "提醒您", message: "即將撥打電話\(phoneNumber)", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "確定", style: .default) { (action) in
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        alert.addAction(okayAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func shareAnimal(_ sender: Any) {
+        
+        if let imageToShare = imageToShare {
+            let activityController = UIActivityViewController(activityItems: [imageToShare], applicationActivities: nil)
+            
+            present(activityController, animated: true, completion: nil)
+        }
+        
+        
     }
 }
 
@@ -72,9 +100,9 @@ extension AdoptDetailViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AdoptDetailIconTextCell", for: indexPath) as! AdoptDetailIconTextCell
-            cell.iconImageView.image = UIImage(systemName: "number")?.withRenderingMode(.alwaysOriginal)
-            cell.shortTextLabel.text = String(describing: adopt?.animalId ?? 0)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AdoptDetailTextCell", for: indexPath) as! AdoptDetailTextCell
+            cell.subtitleTextLabel.text = "動物流水編號："
+            cell.descriptionLabel.text = adopt?.animalSubid
             cell.selectionStyle = .none
             
             return cell
@@ -119,12 +147,12 @@ extension AdoptDetailViewController: UITableViewDataSource, UITableViewDelegate 
             
             return cell
         case 6:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AdoptDetailTextCell", for: indexPath) as! AdoptDetailTextCell
-            cell.subtitleTextLabel.text = "備註："
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AdoptDetailIconTextCell", for: indexPath) as! AdoptDetailIconTextCell
+            cell.iconImageView.image = UIImage(systemName: "info.circle")?.withRenderingMode(.alwaysOriginal)
             if adopt?.animalRemark != "" {
-                cell.descriptionLabel.text = adopt?.animalRemark
+                cell.shortTextLabel.text = adopt?.animalRemark
             } else {
-                cell.descriptionLabel.text = "無資訊"
+                cell.shortTextLabel.text = "無資訊"
             }
             cell.selectionStyle = .none
             

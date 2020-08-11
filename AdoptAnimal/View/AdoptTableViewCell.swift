@@ -28,7 +28,11 @@ class AdoptTableViewCell: UITableViewCell {
     
     @IBOutlet weak var animalSexImageView: UIImageView!
     
+    private var currentAdopt: Adopt?
+    
     func loadAdoptData(adopt: Adopt) {
+        
+        currentAdopt = adopt
         
         animalColor.text = adopt.animalColour
         shelterAddress.text = adopt.shelterAddress
@@ -46,14 +50,39 @@ class AdoptTableViewCell: UITableViewCell {
             adoptImageView.image = UIImage(named: "noImage")
             return
         }
-        guard let imageUrl = URL(string: adopt.albumFile) else { return }
-        URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
-            if let data = data {
-                DispatchQueue.main.async {
-                    self.adoptImageView.image = UIImage(data: data)
+        
+        if let image = CacheManager.shared.getFromCache(key: adopt.albumFile) as? UIImage {
+            adoptImageView.image = image
+        } else {
+            if let imageUrl = URL(string: adopt.albumFile) {
+                
+                let downloadTask = URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
+                    
+                    guard let data = data else { return }
+                    
+                    OperationQueue.main.addOperation {
+                        guard let image = UIImage(data: data) else { return }
+                        
+                        if self.currentAdopt?.albumFile == adopt.albumFile {
+                            self.adoptImageView.image = image
+                        }
+                        
+                        CacheManager.shared.cache(object: image, key: adopt.albumFile)
+                    }
                 }
+                
+                downloadTask.resume()
             }
-        }.resume()
+        }
+        
+        //        guard let imageUrl = URL(string: adopt.albumFile) else { return }
+        //        URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
+        //            if let data = data {
+        //                DispatchQueue.main.async {
+        //                    self.adoptImageView.image = UIImage(data: data)
+        //                }
+        //            }
+        //        }.resume()
         
     }
     

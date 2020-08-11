@@ -39,7 +39,7 @@ class SearchFooter: UIView {
             label.text = "沒有符合您查詢的項目"
             showFooter()
         } else {
-            label.text = "Filtering \(filteredItemCount) of \(totalItemCount)"
+            label.text = "浪浪數量：\(filteredItemCount)"
             showFooter()
         }
     }

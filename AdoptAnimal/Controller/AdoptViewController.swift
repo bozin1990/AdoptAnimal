@@ -29,6 +29,8 @@ class AdoptViewController: UIViewController {
         }
     }
     
+    fileprivate var isLoadingAdopt = false
+    
     let searchController = UISearchController(searchResultsController: nil)
     
     var spinner = UIActivityIndicatorView()
@@ -85,6 +87,7 @@ class AdoptViewController: UIViewController {
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
         }
+        tabBarController?.tabBar.isHidden = false
 //        navigationController?.hidesBarsOnSwipe = true
     }
     

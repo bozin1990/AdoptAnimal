@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7033B5AC24E2930F009B51C2 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033B5AB24E2930F009B51C2 /* CacheManager.swift */; };
 		7039249524E162BF00D219A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7039249424E162BF00D219A6 /* AppDelegate.swift */; };
 		7039249724E162BF00D219A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7039249624E162BF00D219A6 /* SceneDelegate.swift */; };
 		7039249E24E162C000D219A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7039249D24E162C000D219A6 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7033B5AB24E2930F009B51C2 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CacheManager.swift; path = Controller/CacheManager.swift; sourceTree = "<group>"; };
 		7039249124E162BF00D219A6 /* AdoptAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdoptAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7039249424E162BF00D219A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7039249624E162BF00D219A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		7039249324E162BF00D219A6 /* AdoptAnimal */ = {
 			isa = PBXGroup;
 			children = (
+				7033B5AB24E2930F009B51C2 /* CacheManager.swift */,
 				7039250724E1636D00D219A6 /* Resources */,
 				7039251724E1636D00D219A6 /* Extension */,
 				7039251A24E1636D00D219A6 /* Storyboard */,
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7033B5AC24E2930F009B51C2 /* CacheManager.swift in Sources */,
 				7039252F24E1636D00D219A6 /* AdoptTableViewCell.swift in Sources */,
 				7039252D24E1636D00D219A6 /* SearchFooter.swift in Sources */,
 				7039253024E1636D00D219A6 /* UINavigationController+Ext.swift in Sources */,

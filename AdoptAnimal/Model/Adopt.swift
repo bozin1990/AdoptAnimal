@@ -9,7 +9,7 @@
 import Foundation
 
 struct Adopt: Decodable {
-    var animalId: Int               //動物的流水編號
+    var animalSubid: String               //動物的流水編號
     var animalKind: AnimalKind          //動物的類型 [貓 | 狗 | 鳥 ...]
     var animalSex: String?           //動物性別 [M | F | N](公、母、未輸入)
     var animalColour: String? = nil        //動物花色
@@ -51,7 +51,7 @@ struct Adopt: Decodable {
 //    }
     
     enum CodingKeys: String, CodingKey {
-        case animalId = "animal_id"
+        case animalSubid = "animal_subid"
         case animalKind = "animal_kind"
         case animalSex = "animal_sex"
         case animalColour = "animal_colour"
