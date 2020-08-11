@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Adopt" representedClassName="AdoptMO" syncable="YES" codeGenerationType="class">
+        <attribute name="albumFile" optional="YES" attributeType="Binary"/>
+        <attribute name="animalAge" optional="YES" attributeType="String"/>
+        <attribute name="animalBacterin" optional="YES" attributeType="String"/>
+        <attribute name="animalColour" optional="YES" attributeType="String"/>
+        <attribute name="animalFoundplace" optional="YES" attributeType="String"/>
+        <attribute name="animalKind" optional="YES" attributeType="String"/>
+        <attribute name="animalOpendate" optional="YES" attributeType="String"/>
+        <attribute name="animalRemark" optional="YES" attributeType="String"/>
+        <attribute name="animalSex" optional="YES" attributeType="String"/>
+        <attribute name="animalStatus" optional="YES" attributeType="String"/>
+        <attribute name="animalSterilization" optional="YES" attributeType="String"/>
+        <attribute name="animalSubid" optional="YES" attributeType="String"/>
+        <attribute name="cDate" optional="YES" attributeType="String"/>
+        <attribute name="shelterAddress" optional="YES" attributeType="String"/>
+        <attribute name="shelterName" optional="YES" attributeType="String"/>
+        <attribute name="shelterTel" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Adopt" positionX="-63" positionY="-18" width="128" height="283"/>
+    </elements>
+</model>

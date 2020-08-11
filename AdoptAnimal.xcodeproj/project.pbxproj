@@ -33,6 +33,10 @@
 		7039253424E1636D00D219A6 /* AdoptDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7039251E24E1636D00D219A6 /* AdoptDetailViewController.swift */; };
 		7039253524E1636D00D219A6 /* AdoptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7039251F24E1636D00D219A6 /* AdoptViewController.swift */; };
 		7039253624E1636D00D219A6 /* AdoptDetailIconTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7039252024E1636D00D219A6 /* AdoptDetailIconTextCell.swift */; };
+		70ADC82424E3035200D8C017 /* MyFavorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70ADC82324E3035200D8C017 /* MyFavorite.storyboard */; };
+		70ADC82624E310D400D8C017 /* MyFavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ADC82524E310D400D8C017 /* MyFavoriteTableViewCell.swift */; };
+		70ADC82824E310E900D8C017 /* MyFavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ADC82724E310E900D8C017 /* MyFavoriteTableViewController.swift */; };
+		70ADC82B24E31E4A00D8C017 /* AdoptAnimal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70ADC82924E31E4A00D8C017 /* AdoptAnimal.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		7039251E24E1636D00D219A6 /* AdoptDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdoptDetailViewController.swift; sourceTree = "<group>"; };
 		7039251F24E1636D00D219A6 /* AdoptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdoptViewController.swift; sourceTree = "<group>"; };
 		7039252024E1636D00D219A6 /* AdoptDetailIconTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdoptDetailIconTextCell.swift; sourceTree = "<group>"; };
+		70ADC82324E3035200D8C017 /* MyFavorite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyFavorite.storyboard; sourceTree = "<group>"; };
+		70ADC82524E310D400D8C017 /* MyFavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyFavoriteTableViewCell.swift; path = AdoptAnimal/Storyboard/MyFavoriteTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		70ADC82724E310E900D8C017 /* MyFavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyFavoriteTableViewController.swift; path = AdoptAnimal/View/MyFavoriteTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		70ADC82A24E31E4A00D8C017 /* AdoptAnimal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AdoptAnimal.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +112,7 @@
 				7039251324E1636D00D219A6 /* View */,
 				7039252124E1636D00D219A6 /* Controller */,
 				7039249424E162BF00D219A6 /* AppDelegate.swift */,
+				70ADC82924E31E4A00D8C017 /* AdoptAnimal.xcdatamodeld */,
 				7039249624E162BF00D219A6 /* SceneDelegate.swift */,
 				7039249D24E162C000D219A6 /* Assets.xcassets */,
 				7039249F24E162C000D219A6 /* LaunchScreen.storyboard */,
@@ -148,6 +157,7 @@
 		7039251324E1636D00D219A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				70ADC82524E310D400D8C017 /* MyFavoriteTableViewCell.swift */,
 				7039251B24E1636D00D219A6 /* AdoptDetailHeaderView.swift */,
 				7039251424E1636D00D219A6 /* SearchFooter.swift */,
 				7039252024E1636D00D219A6 /* AdoptDetailIconTextCell.swift */,
@@ -170,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				7039251C24E1636D00D219A6 /* Main.storyboard */,
+				70ADC82324E3035200D8C017 /* MyFavorite.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -177,6 +188,7 @@
 		7039252124E1636D00D219A6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				70ADC82724E310E900D8C017 /* MyFavoriteTableViewController.swift */,
 				7039251E24E1636D00D219A6 /* AdoptDetailViewController.swift */,
 				7039251F24E1636D00D219A6 /* AdoptViewController.swift */,
 			);
@@ -249,6 +261,7 @@
 				7039249E24E162C000D219A6 /* Assets.xcassets in Resources */,
 				7039252A24E1636D00D219A6 /* Rubik-BlackItalic.ttf in Resources */,
 				7039253324E1636D00D219A6 /* Main.storyboard in Resources */,
+				70ADC82424E3035200D8C017 /* MyFavorite.storyboard in Resources */,
 				7039252824E1636D00D219A6 /* Rubik-Italic.ttf in Resources */,
 				7039252324E1636D00D219A6 /* Rubik-MediumItalic.ttf in Resources */,
 				7039252424E1636D00D219A6 /* Rubik-Bold.ttf in Resources */,
@@ -265,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7033B5AC24E2930F009B51C2 /* CacheManager.swift in Sources */,
+				70ADC82624E310D400D8C017 /* MyFavoriteTableViewCell.swift in Sources */,
 				7039252F24E1636D00D219A6 /* AdoptTableViewCell.swift in Sources */,
 				7039252D24E1636D00D219A6 /* SearchFooter.swift in Sources */,
 				7039253024E1636D00D219A6 /* UINavigationController+Ext.swift in Sources */,
@@ -273,10 +287,12 @@
 				7039253624E1636D00D219A6 /* AdoptDetailIconTextCell.swift in Sources */,
 				7039252224E1636D00D219A6 /* Adopt.swift in Sources */,
 				7039253524E1636D00D219A6 /* AdoptViewController.swift in Sources */,
+				70ADC82B24E31E4A00D8C017 /* AdoptAnimal.xcdatamodeld in Sources */,
 				7039253124E1636D00D219A6 /* UIColor+Ext.swift in Sources */,
 				7039252E24E1636D00D219A6 /* AdoptDetailTextCell.swift in Sources */,
 				7039249724E162BF00D219A6 /* SceneDelegate.swift in Sources */,
 				7039253224E1636D00D219A6 /* AdoptDetailHeaderView.swift in Sources */,
+				70ADC82824E310E900D8C017 /* MyFavoriteTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +490,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		70ADC82924E31E4A00D8C017 /* AdoptAnimal.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				70ADC82A24E31E4A00D8C017 /* AdoptAnimal.xcdatamodel */,
+			);
+			currentVersion = 70ADC82A24E31E4A00D8C017 /* AdoptAnimal.xcdatamodel */;
+			path = AdoptAnimal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7039248924E162BF00D219A6 /* Project object */;
 }

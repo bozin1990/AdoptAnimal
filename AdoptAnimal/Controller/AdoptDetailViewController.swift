@@ -87,9 +87,11 @@ class AdoptDetailViewController: UIViewController {
             
             present(activityController, animated: true, completion: nil)
         }
-        
-        
     }
+    
+    @IBAction func saveToMyFavorite(_ sender: Any) {
+    }
+    
 }
 
 extension AdoptDetailViewController: UITableViewDataSource, UITableViewDelegate {

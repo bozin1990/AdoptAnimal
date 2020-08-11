@@ -7,6 +7,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Rubik-Light.ttf">
+            <string>Rubik-Light</string>
+        </array>
+        <array key="Rubik-Medium.ttf">
+            <string>Rubik-Medium</string>
+        </array>
         <array key="Rubik-Regular.ttf">
             <string>Rubik-Regular</string>
         </array>
@@ -48,25 +54,25 @@
                                                                     <rect key="frame" x="70" y="9.0000000000000036" width="215" height="41.666666666666671"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="f8E-pM-whu">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="209.66666666666666" height="20.333333333333332"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="215" height="20.333333333333332"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="animal_kind" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pll-Mn-mcH">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="97" height="20.333333333333332"/>
-                                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="102" height="20.333333333333332"/>
+                                                                                    <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="17"/>
                                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="animal_colour" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30b-z8-0Pz">
-                                                                                    <rect key="frame" x="105" y="0.0" width="104.66666666666669" height="20.333333333333332"/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                    <rect key="frame" x="110" y="0.0" width="105" height="20.333333333333332"/>
+                                                                                    <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="16"/>
                                                                                     <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                             </subviews>
                                                                         </stackView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shelter_address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQw-HU-WpA">
-                                                                            <rect key="frame" x="0.0" y="21.333333333333336" width="120" height="20.333333333333336"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <rect key="frame" x="0.0" y="21.333333333333336" width="126.33333333333333" height="20.333333333333336"/>
+                                                                            <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="17"/>
                                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -203,6 +209,10 @@
                                     <state key="normal" image="heart.fill" catalog="system">
                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                     </state>
+                                    <connections>
+                                        <action selector="saveToMyFavorite:" destination="zsS-KG-OHB" eventType="touchUpInside" id="6bB-Uf-eqr"/>
+                                        <action selector="shareAnimal:" destination="zsS-KG-OHB" eventType="touchUpInside" id="KU3-c1-QGg"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -233,6 +243,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="47" id="xKN-LD-APH"/>
                                     </constraints>
+                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="撥打電話" image="phone" catalog="system">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -275,7 +286,7 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cA-Cv-ToS">
                                                     <rect key="frame" x="30" y="0.0" width="307" height="18"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -302,14 +313,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是否開放領養：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPg-op-7Th">
-                                            <rect key="frame" x="15.999999999999993" y="14.000000000000002" width="121.33333333333331" height="20.666666666666671"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <rect key="frame" x="16" y="14.000000000000002" width="119" height="20.666666666666671"/>
+                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPEN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kV-Zg-TZr">
-                                            <rect key="frame" x="142.33333333333334" y="14.000000000000002" width="40.333333333333343" height="20.666666666666671"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <rect key="frame" x="140" y="14.000000000000002" width="38.666666666666657" height="20.666666666666671"/>
+                                            <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -376,11 +387,22 @@
                     </tabBar>
                     <connections>
                         <segue destination="Szd-1F-Ijm" kind="relationship" relationship="viewControllers" id="j4q-1h-k5l"/>
+                        <segue destination="cb2-t9-gFx" kind="relationship" relationship="viewControllers" id="xKV-z3-DEW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kF-4N-TRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-244" y="16.995073891625616"/>
+        </scene>
+        <!--MyFavorite-->
+        <scene sceneID="Z7Z-Q7-w2l">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyFavorite" id="cb2-t9-gFx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="y7I-Wl-jHa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iLZ-Dt-Pxj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-257" y="438"/>
         </scene>
     </scenes>
     <resources>
