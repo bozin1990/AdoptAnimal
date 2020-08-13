@@ -14,5 +14,5 @@ class AdoptDetailHeaderView: UIView {
     @IBOutlet weak var animalKindLabel: UILabel!
     @IBOutlet weak var animalAgeLabel: UILabel!
     @IBOutlet weak var animalColourLabel: UILabel!
-
+    @IBOutlet weak var isFavoriteButton: UIButton!
 }

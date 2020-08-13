@@ -9,7 +9,7 @@
 import UIKit
 
 class MyFavoriteTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var adoptImageView: UIImageView! {
         didSet {
             adoptImageView.contentMode = .scaleAspectFill
@@ -31,15 +31,36 @@ class MyFavoriteTableViewCell: UITableViewCell {
     
     @IBOutlet weak var shelterTelLabel: UILabel!
     
+    @IBOutlet weak var isFavoriteButton: UIButton!
+    
+    var adoptData: AdoptMO?
+    
+    func loadFavoriteData(adopt: AdoptMO) {
+        
+        shelterNameLabel.text = adopt.shelterName
+        shelterAddressLabel.text = adopt.shelterAddress
+        shelterTelLabel.text = adopt.shelterTel
+        if adopt.isFavorite {
+            isFavoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            isFavoriteButton.tintColor = .red
+        }
+        
+        if let adoptImage = adopt.albumFile {
+            adoptImageView.image = UIImage(data: adoptImage as Data)
+        }
+        
+        adoptData = adopt
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

@@ -144,7 +144,7 @@
         <!-- -->
         <scene sceneID="O7Q-WH-VsP">
             <objects>
-                <viewController id="zsS-KG-OHB" customClass="AdoptDetailViewController" customModule="AdoptAnimal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdoptDetailViewController" id="zsS-KG-OHB" customClass="AdoptDetailViewController" customModule="AdoptAnimal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7xC-yG-FYB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -231,6 +231,7 @@
                                 <outlet property="animalColourLabel" destination="gPN-6o-kWI" id="Hff-1w-GvA"/>
                                 <outlet property="animalImageView" destination="41H-tp-sbR" id="0ik-Qa-vh2"/>
                                 <outlet property="animalKindLabel" destination="YSQ-WA-C0j" id="NNp-ZX-26u"/>
+                                <outlet property="isFavoriteButton" destination="gl7-xC-YVD" id="1R0-ba-wgU"/>
                             </connections>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="GR8-c2-9Lr">
