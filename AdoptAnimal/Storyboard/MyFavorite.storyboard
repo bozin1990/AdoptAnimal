@@ -137,11 +137,11 @@
             </objects>
             <point key="canvasLocation" x="676.81159420289862" y="-217.63392857142856"/>
         </scene>
-        <!--Item-->
+        <!--收藏-->
         <scene sceneID="MBH-HN-F3o">
             <objects>
                 <navigationController id="Hbh-sn-SrU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="heart" catalog="system" id="iM1-BJ-rUb"/>
+                    <tabBarItem key="tabBarItem" title="收藏" image="heart" catalog="system" id="iM1-BJ-rUb"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3tF-os-w9Z">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

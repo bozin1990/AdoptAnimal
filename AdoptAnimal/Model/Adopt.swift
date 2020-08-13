@@ -50,6 +50,25 @@ struct Adopt: Decodable {
 //        
 //    }
     
+    init(animalSubid: String, animalKind: AnimalKind, animalSex: String, animalColour: String, animalAge: String, animalSterilization: String, animalBacterin: String, animalFoundplace: String, animalStatus: String, animalRemark: String, animalOpendate: String, shelterName: String, albumFile: String, cDate: String, shelterAddress: String, shelterTel: String) {
+        self.animalSubid = animalSubid
+        self.animalKind = animalKind
+        self.animalSex = animalSex
+        self.animalColour = animalColour
+        self.animalAge = animalAge
+        self.animalSterilization = animalSterilization
+        self.animalBacterin = animalBacterin
+        self.animalFoundplace = animalFoundplace
+        self.animalStatus = animalStatus
+        self.animalRemark = animalRemark
+        self.animalOpendate = animalOpendate
+        self.shelterName = shelterName
+        self.albumFile = albumFile
+        self.cDate = cDate
+        self.shelterAddress = shelterAddress
+        self.shelterTel = shelterTel
+    }
+    
     enum CodingKeys: String, CodingKey {
         case animalSubid = "animal_subid"
         case animalKind = "animal_kind"

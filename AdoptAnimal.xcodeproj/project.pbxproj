@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		700BF92324E5816E00BFC6EA /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 700BF92224E5816E00BFC6EA /* About.storyboard */; };
+		700BF92524E5923900BFC6EA /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700BF92424E5923900BFC6EA /* AboutTableViewController.swift */; };
+		700BF92724E5A71C00BFC6EA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700BF92624E5A71C00BFC6EA /* WebViewController.swift */; };
 		7033B5AC24E2930F009B51C2 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033B5AB24E2930F009B51C2 /* CacheManager.swift */; };
 		7039249524E162BF00D219A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7039249424E162BF00D219A6 /* AppDelegate.swift */; };
 		7039249724E162BF00D219A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7039249624E162BF00D219A6 /* SceneDelegate.swift */; };
@@ -40,6 +43,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		700BF92224E5816E00BFC6EA /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		700BF92424E5923900BFC6EA /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutTableViewController.swift; path = AdoptAnimal/Storyboard/AboutTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		700BF92624E5A71C00BFC6EA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = AdoptAnimal/Storyboard/WebViewController.swift; sourceTree = SOURCE_ROOT; };
 		7033B5AB24E2930F009B51C2 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CacheManager.swift; path = Controller/CacheManager.swift; sourceTree = "<group>"; };
 		7039249124E162BF00D219A6 /* AdoptAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdoptAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7039249424E162BF00D219A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +187,7 @@
 			children = (
 				7039251C24E1636D00D219A6 /* Main.storyboard */,
 				70ADC82324E3035200D8C017 /* MyFavorite.storyboard */,
+				700BF92224E5816E00BFC6EA /* About.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -188,6 +195,8 @@
 		7039252124E1636D00D219A6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				700BF92624E5A71C00BFC6EA /* WebViewController.swift */,
+				700BF92424E5923900BFC6EA /* AboutTableViewController.swift */,
 				70ADC82724E310E900D8C017 /* MyFavoriteTableViewController.swift */,
 				7039251E24E1636D00D219A6 /* AdoptDetailViewController.swift */,
 				7039251F24E1636D00D219A6 /* AdoptViewController.swift */,
@@ -264,6 +273,7 @@
 				70ADC82424E3035200D8C017 /* MyFavorite.storyboard in Resources */,
 				7039252824E1636D00D219A6 /* Rubik-Italic.ttf in Resources */,
 				7039252324E1636D00D219A6 /* Rubik-MediumItalic.ttf in Resources */,
+				700BF92324E5816E00BFC6EA /* About.storyboard in Resources */,
 				7039252424E1636D00D219A6 /* Rubik-Bold.ttf in Resources */,
 				7039252C24E1636D00D219A6 /* Rubik-BoldItalic.ttf in Resources */,
 				7039252624E1636D00D219A6 /* Rubik-Medium.ttf in Resources */,
@@ -278,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7033B5AC24E2930F009B51C2 /* CacheManager.swift in Sources */,
+				700BF92724E5A71C00BFC6EA /* WebViewController.swift in Sources */,
 				70ADC82624E310D400D8C017 /* MyFavoriteTableViewCell.swift in Sources */,
 				7039252F24E1636D00D219A6 /* AdoptTableViewCell.swift in Sources */,
 				7039252D24E1636D00D219A6 /* SearchFooter.swift in Sources */,
@@ -288,6 +299,7 @@
 				7039252224E1636D00D219A6 /* Adopt.swift in Sources */,
 				7039253524E1636D00D219A6 /* AdoptViewController.swift in Sources */,
 				70ADC82B24E31E4A00D8C017 /* AdoptAnimal.xcdatamodeld in Sources */,
+				700BF92524E5923900BFC6EA /* AboutTableViewController.swift in Sources */,
 				7039253124E1636D00D219A6 /* UIColor+Ext.swift in Sources */,
 				7039252E24E1636D00D219A6 /* AdoptDetailTextCell.swift in Sources */,
 				7039249724E162BF00D219A6 /* SceneDelegate.swift in Sources */,

@@ -62,6 +62,7 @@ class SearchFooter: UIView {
         
         label.textAlignment = .center
         label.textColor = UIColor.white
+        label.font = UIFont(name: "Rubik", size: 20)
         addSubview(label)
     }
 }

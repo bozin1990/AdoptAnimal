@@ -48,6 +48,7 @@ class MyFavoriteTableViewCell: UITableViewCell {
         if let adoptImage = adopt.albumFile {
             adoptImageView.image = UIImage(data: adoptImage as Data)
         }
+        self.selectionStyle = .none
         
         adoptData = adopt
     }
