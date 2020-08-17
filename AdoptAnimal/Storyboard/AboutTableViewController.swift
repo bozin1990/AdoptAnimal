@@ -70,7 +70,7 @@ class AboutTableViewController: UITableViewController {
                 }
             } else if indexPath.row == 1 {
                 
-//                先判斷使用者是否有開啟內建郵件功能
+                //                先判斷使用者是否有開啟內建郵件功能
                 guard MFMailComposeViewController.canSendMail() else {
                     
                     let alertController = UIAlertController(title: "提醒您❗️", message: "請先在手機設定的密碼與帳號中啟用郵件功能", preferredStyle: .alert)
@@ -122,20 +122,6 @@ class AboutTableViewController: UITableViewController {
         }
         
         tableView.deselectRow(at: indexPath, animated: false)
-    }
-    
-    
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showWebView" {
-            if let destinationController = segue.destination as? WebViewController, let indexPath = tableView.indexPathForSelectedRow {
-                
-                destinationController.targetURL = sectionContent[indexPath.section][indexPath.row].link
-            }
-        }
-        
     }
 }
 
