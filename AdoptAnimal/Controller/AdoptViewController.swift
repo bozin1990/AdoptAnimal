@@ -13,6 +13,8 @@ class AdoptViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchFooter: SearchFooter!
     @IBOutlet weak var searchFooterBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollToTopButton: UIButton!
+    @IBOutlet weak var floatingButtonBottomConstraiant: NSLayoutConstraint!
     
     var adopts = [Adopt]() {
         didSet {
@@ -53,6 +55,7 @@ class AdoptViewController: UIViewController {
         searchController.searchBar.tintColor = UIColor(red: 231, green: 76, blue: 60)
         searchController.searchBar.scopeButtonTitles = Adopt.AnimalKind.allCases.map { $0.rawValue }
         searchController.searchBar.delegate = self
+        searchController.searchBar.setValue("取消", forKey: "cancelButtonText")
         
         definesPresentationContext = true
         
@@ -72,6 +75,8 @@ class AdoptViewController: UIViewController {
         
         spinner.startAnimating()
         
+        addDoneButton()
+        
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: .main) { (notification) in
             self.handleKeyboard(notification: notification)
@@ -79,6 +84,7 @@ class AdoptViewController: UIViewController {
         notificationCenter.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (notification) in
             self.handleKeyboard(notification: notification)
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -130,6 +136,26 @@ class AdoptViewController: UIViewController {
         }.resume()
     }
     
+    func addDoneButton() {
+        let toolBar = UIToolbar()
+        let doneButton = UIBarButtonItem(title: "完成", style: .done, target: self, action: #selector(doneButtonPressed))
+        doneButton.tintColor = UIColor(red: 231, green: 76, blue: 60)
+        let titleLabel = UILabel()
+        titleLabel.frame = view.bounds
+        titleLabel.textColor = .lightGray
+        titleLabel.text = "請輸入地址或花色"
+        titleLabel.textAlignment = .center
+        let toolBarTitle = UIBarButtonItem(customView: titleLabel)
+        let lexibeSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolBar.sizeToFit()
+        toolBar.setItems([toolBarTitle, lexibeSpace, doneButton], animated: false)
+        searchController.searchBar.inputAccessoryView = toolBar
+    }
+    
+    @objc func doneButtonPressed() {
+        navigationController?.view.endEditing(true)
+    }
+    
     var isSearchBarEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
@@ -162,6 +188,7 @@ class AdoptViewController: UIViewController {
         guard notification.name == UIResponder.keyboardWillChangeFrameNotification else {
             let tabBarHeight = tabBarController?.tabBar.frame.size.height
             searchFooterBottomConstraint.constant = tabBarHeight ?? 0
+            floatingButtonBottomConstraiant.constant = tabBarHeight ?? 0
             view.layoutIfNeeded()
             
             return
@@ -176,6 +203,35 @@ class AdoptViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
         
+    }
+    
+    //  顯示按鈕
+    func showFloatingButton() {
+        UIView.animate(withDuration: 0.4) {
+            self.scrollToTopButton.transform = .identity
+            self.scrollToTopButton.alpha = 1
+        }
+    }
+
+    // 隱藏按鈕
+    func hideFloatingButton() {
+        UIView.animate(withDuration: 0.4) {
+            self.scrollToTopButton.transform = CGAffineTransform(translationX: 0 , y: 50)
+            self.scrollToTopButton.alpha = 0
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // 當我們的 contentOffset.y 超過我們一個 collectionView 的高度就顯示懸浮按鈕，反之則隱藏。
+        if scrollView.contentOffset.y >= scrollView.bounds.height {
+            showFloatingButton()
+        } else {
+            hideFloatingButton()
+        }
+    }
+    
+    @IBAction func scrollToTop(_ sender: UIButton) {
+        tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -203,6 +259,7 @@ extension AdoptViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         searchFooter.setNotFiltering()
+        floatingButtonBottomConstraiant.constant = 10
         return adopts.count
     }
     
@@ -235,4 +292,18 @@ extension AdoptViewController: UISearchBarDelegate {
         let category = Adopt.AnimalKind(rawValue: searchBar.scopeButtonTitles![selectedScope])
         filterContentForSearchText(searchBar.text!, category: category)
     }
+}
+
+extension AdoptViewController {
+    func floatingButtonShadow(_ button: UIButton) {
+//        陰影偏移量
+        button.layer.shadowOffset = CGSize(width: button.bounds.width / 10, height: button.bounds.width / 10)
+//        陰影透明度
+        button.layer.shadowOpacity = 0.7
+//        陰影模糊度
+        button.layer.shadowRadius = 5
+//        陰影顏色
+        button.layer.shadowColor = UIColor.black.cgColor
+    }
+    
 }

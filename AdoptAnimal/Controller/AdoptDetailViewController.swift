@@ -131,6 +131,18 @@ class AdoptDetailViewController: UIViewController {
         guard adopt != nil else {
             return
         }
+        
+        saveToCoreData()
+        
+        let alertController = UIAlertController(title: "添加成功😻", message: "浪浪已加入到收藏頁面", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "確認", style: .cancel, handler: nil)
+        alertController.addAction(okayAction)
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    func saveToCoreData() {
+        
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             
             adoptMO = AdoptMO(context: appDelegate.persistentContainer.viewContext)
@@ -157,13 +169,9 @@ class AdoptDetailViewController: UIViewController {
             
             print("Saving data to context ...")
             appDelegate.saveContext()
-            
-            let alertController = UIAlertController(title: "提醒您", message: "浪浪已加入收藏", preferredStyle: .alert)
-            let okayAction = UIAlertAction(title: "確認", style: .cancel, handler: nil)
-            alertController.addAction(okayAction)
-            present(alertController, animated: true, completion: nil)
         }
     }
+    
 }
 
 extension AdoptDetailViewController: UITableViewDataSource, UITableViewDelegate {
@@ -182,7 +190,7 @@ extension AdoptDetailViewController: UITableViewDataSource, UITableViewDelegate 
                 cell.descriptionLabel.text = adoptMO?.animalSubid
             }
             cell.selectionStyle = .none
-
+            
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdoptDetailIconTextCell", for: indexPath) as! AdoptDetailIconTextCell
@@ -193,7 +201,7 @@ extension AdoptDetailViewController: UITableViewDataSource, UITableViewDelegate 
                 cell.shortTextLabel.text = adoptMO?.shelterName
             }
             cell.selectionStyle = .none
-
+            
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdoptDetailIconTextCell", for: indexPath) as! AdoptDetailIconTextCell
@@ -204,7 +212,7 @@ extension AdoptDetailViewController: UITableViewDataSource, UITableViewDelegate 
                 cell.shortTextLabel.text = adoptMO?.shelterTel
             }
             cell.selectionStyle = .none
-
+            
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdoptDetailIconTextCell", for: indexPath) as! AdoptDetailIconTextCell
@@ -215,7 +223,7 @@ extension AdoptDetailViewController: UITableViewDataSource, UITableViewDelegate 
                 cell.shortTextLabel.text = adoptMO?.shelterAddress
             }
             cell.selectionStyle = .none
-
+            
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdoptDetailTextCell", for: indexPath) as! AdoptDetailTextCell
@@ -226,7 +234,7 @@ extension AdoptDetailViewController: UITableViewDataSource, UITableViewDelegate 
                 cell.descriptionLabel.text = adoptMO?.animalFoundplace
             }
             cell.selectionStyle = .none
-
+            
             return cell
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdoptDetailTextCell", for: indexPath) as! AdoptDetailTextCell
@@ -249,7 +257,7 @@ extension AdoptDetailViewController: UITableViewDataSource, UITableViewDelegate 
                 }
             }
             cell.selectionStyle = .none
-
+            
             return cell
         case 6:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdoptDetailIconTextCell", for: indexPath) as! AdoptDetailIconTextCell

@@ -108,6 +108,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfn-IS-hwL">
+                                <rect key="frame" x="324" y="679.33333333333337" width="41" height="39.666666666666629"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="41" id="QJ9-60-VbA"/>
+                                    <constraint firstAttribute="height" constant="39.670000000000002" id="aV0-X4-xvg"/>
+                                </constraints>
+                                <color key="tintColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="chevron.up.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
+                                </state>
+                                <connections>
+                                    <action selector="scrollToTop:" destination="bRW-TQ-LFt" eventType="touchUpInside" id="HNu-Gl-NbO"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvj-9T-vVL" customClass="SearchFooter" customModule="AdoptAnimal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="768" width="375" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -120,6 +134,8 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ef5-zQ-9sp" secondAttribute="bottom" id="0vt-8S-8T0"/>
                             <constraint firstItem="ef5-zQ-9sp" firstAttribute="trailing" secondItem="aIf-hs-7hF" secondAttribute="trailing" id="RUC-Yg-suI"/>
+                            <constraint firstItem="ZWb-a8-cI2" firstAttribute="bottom" secondItem="kfn-IS-hwL" secondAttribute="bottom" constant="10" id="bac-ad-8pL"/>
+                            <constraint firstItem="ZWb-a8-cI2" firstAttribute="trailing" secondItem="kfn-IS-hwL" secondAttribute="trailing" constant="10" id="dGV-F9-UXF"/>
                             <constraint firstItem="ef5-zQ-9sp" firstAttribute="leading" secondItem="aIf-hs-7hF" secondAttribute="leading" id="iLe-bk-lxW"/>
                             <constraint firstAttribute="trailing" secondItem="pvj-9T-vVL" secondAttribute="trailing" id="klv-zy-F0I"/>
                             <constraint firstItem="ef5-zQ-9sp" firstAttribute="top" secondItem="ZWb-a8-cI2" secondAttribute="top" id="toH-fD-lsA"/>
@@ -132,6 +148,8 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="sHj-11-Zcn"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="floatingButtonBottomConstraiant" destination="bac-ad-8pL" id="Ga3-KO-HfF"/>
+                        <outlet property="scrollToTopButton" destination="kfn-IS-hwL" id="3cC-Zj-WKm"/>
                         <outlet property="searchFooter" destination="pvj-9T-vVL" id="FJf-Aa-GaN"/>
                         <outlet property="searchFooterBottomConstraint" destination="z8c-FC-TWU" id="Tci-f0-hkj"/>
                         <outlet property="tableView" destination="ef5-zQ-9sp" id="rQ7-cz-tqM"/>
@@ -156,6 +174,10 @@
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="41H-tp-sbR" userLabel="Header Image View">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
                                 </imageView>
+                                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X0o-uA-9RE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CiJ-qr-sHd">
                                     <rect key="frame" x="14" y="316" width="159" height="20"/>
                                     <subviews>
@@ -205,7 +227,7 @@
                                         <constraint firstAttribute="width" constant="49" id="51T-fe-RdE"/>
                                         <constraint firstAttribute="height" constant="42" id="sRf-xs-LsA"/>
                                     </constraints>
-                                    <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" image="heart.fill" catalog="system">
                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                     </state>
@@ -218,12 +240,16 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="41H-tp-sbR" firstAttribute="top" secondItem="Leo-Ru-QhW" secondAttribute="top" id="2bZ-Gv-rzF"/>
+                                <constraint firstAttribute="trailing" secondItem="X0o-uA-9RE" secondAttribute="trailing" id="B6N-jD-4zQ"/>
+                                <constraint firstItem="X0o-uA-9RE" firstAttribute="top" secondItem="Leo-Ru-QhW" secondAttribute="top" id="WDl-g8-SQY"/>
                                 <constraint firstAttribute="trailing" secondItem="41H-tp-sbR" secondAttribute="trailing" id="WSn-S7-3sx"/>
                                 <constraint firstItem="CiJ-qr-sHd" firstAttribute="leading" secondItem="Leo-Ru-QhW" secondAttribute="leading" constant="14" id="hDn-wu-jRK"/>
                                 <constraint firstItem="41H-tp-sbR" firstAttribute="leading" secondItem="Leo-Ru-QhW" secondAttribute="leading" id="idL-0Y-Vcm"/>
                                 <constraint firstAttribute="bottom" secondItem="41H-tp-sbR" secondAttribute="bottom" id="o7w-VD-Ma9"/>
                                 <constraint firstAttribute="trailing" secondItem="gl7-xC-YVD" secondAttribute="trailing" constant="5" id="osZ-zj-dgv"/>
                                 <constraint firstItem="gl7-xC-YVD" firstAttribute="bottom" secondItem="CiJ-qr-sHd" secondAttribute="bottom" id="qe3-yM-PjV"/>
+                                <constraint firstAttribute="bottom" secondItem="X0o-uA-9RE" secondAttribute="bottom" id="sKc-MV-yCe"/>
+                                <constraint firstItem="X0o-uA-9RE" firstAttribute="leading" secondItem="Leo-Ru-QhW" secondAttribute="leading" id="sX0-CN-MGP"/>
                                 <constraint firstAttribute="bottom" secondItem="CiJ-qr-sHd" secondAttribute="bottom" constant="14" id="urH-VA-EZN"/>
                             </constraints>
                             <connections>
@@ -418,6 +444,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.up.circle.fill" catalog="system" width="64" height="60"/>
         <image name="heart.fill" catalog="system" width="64" height="54"/>
         <image name="list.dash" catalog="system" width="64" height="42"/>
         <image name="male" width="48" height="48"/>

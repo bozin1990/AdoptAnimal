@@ -30,9 +30,7 @@ class MyFavoriteTableViewCell: UITableViewCell {
     }
     
     @IBOutlet weak var shelterTelLabel: UILabel!
-    
-    @IBOutlet weak var isFavoriteButton: UIButton!
-    
+        
     var adoptData: AdoptMO?
     
     func loadFavoriteData(adopt: AdoptMO) {
@@ -40,10 +38,6 @@ class MyFavoriteTableViewCell: UITableViewCell {
         shelterNameLabel.text = adopt.shelterName
         shelterAddressLabel.text = adopt.shelterAddress
         shelterTelLabel.text = adopt.shelterTel
-        if adopt.isFavorite {
-            isFavoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            isFavoriteButton.tintColor = .red
-        }
         
         if let adoptImage = adopt.albumFile {
             adoptImageView.image = UIImage(data: adoptImage as Data)

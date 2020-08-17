@@ -10,7 +10,11 @@ import UIKit
 
 class AdoptDetailTextCell: UITableViewCell {
 
-    @IBOutlet weak var subtitleTextLabel: UILabel!
+    @IBOutlet weak var subtitleTextLabel: UILabel! {
+        didSet {
+            subtitleTextLabel.numberOfLines = 0
+        }
+    }
     @IBOutlet weak var descriptionLabel: UILabel! {
         didSet {
             descriptionLabel.numberOfLines = 0
