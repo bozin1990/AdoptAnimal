@@ -95,11 +95,10 @@ class AdoptDetailViewController: UIViewController {
         
         guard let phoneNumber = adopt?.shelterTel, let url = URL(string: "tel://\(phoneNumber)") else {
             
-            let phoneNumber = adoptMO?.shelterTel
-            let url = URL(string: "tel://\(phoneNumber ?? "")")
-            let alert = UIAlertController(title: "提醒您", message: "即將撥打電話\(phoneNumber ?? "")", preferredStyle: .alert)
+            guard let phoneNumber = adoptMO?.shelterTel, let url = URL(string: "tel://\(phoneNumber)") else { return }
+            let alert = UIAlertController(title: "提醒您", message: "即將撥打電話\(phoneNumber)", preferredStyle: .alert)
             let okayAction = UIAlertAction(title: "確定", style: .default) { (action) in
-                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
             let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
             alert.addAction(okayAction)
