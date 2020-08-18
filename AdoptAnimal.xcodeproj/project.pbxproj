@@ -46,7 +46,7 @@
 		700BF92224E5816E00BFC6EA /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		700BF92424E5923900BFC6EA /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutTableViewController.swift; path = AdoptAnimal/Storyboard/AboutTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		700BF92624E5A71C00BFC6EA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = AdoptAnimal/Storyboard/WebViewController.swift; sourceTree = SOURCE_ROOT; };
-		7033B5AB24E2930F009B51C2 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CacheManager.swift; path = Controller/CacheManager.swift; sourceTree = "<group>"; };
+		7033B5AB24E2930F009B51C2 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		7039249124E162BF00D219A6 /* AdoptAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdoptAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7039249424E162BF00D219A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7039249624E162BF00D219A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,13 +110,13 @@
 		7039249324E162BF00D219A6 /* AdoptAnimal */ = {
 			isa = PBXGroup;
 			children = (
-				7033B5AB24E2930F009B51C2 /* CacheManager.swift */,
 				7039250724E1636D00D219A6 /* Resources */,
 				7039251724E1636D00D219A6 /* Extension */,
 				7039251A24E1636D00D219A6 /* Storyboard */,
 				7039250524E1636D00D219A6 /* Model */,
 				7039251324E1636D00D219A6 /* View */,
 				7039252124E1636D00D219A6 /* Controller */,
+				7033B5AB24E2930F009B51C2 /* CacheManager.swift */,
 				7039249424E162BF00D219A6 /* AppDelegate.swift */,
 				70ADC82924E31E4A00D8C017 /* AdoptAnimal.xcdatamodeld */,
 				7039249624E162BF00D219A6 /* SceneDelegate.swift */,
@@ -458,7 +458,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Bozin.AdoptAnimal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -476,7 +476,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Bozin.AdoptAnimal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
