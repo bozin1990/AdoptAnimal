@@ -64,9 +64,9 @@ class AboutTableViewController: UITableViewController {
         switch indexPath.section {
         case 0:
             if indexPath.row == 0 {
-                if let url = URL(string: link) {
-                    let safariController = SFSafariViewController(url: url)
-                    present(safariController, animated: true, completion: nil)
+                let appleID = "1528297743"
+                if let appUrl = URL(string: "https://itunes.apple.com/us/app/itunes-u/id\(appleID)?action=write-review") {
+                    UIApplication.shared.open(appUrl, options: [:], completionHandler: nil)
                 }
             } else if indexPath.row == 1 {
                 
