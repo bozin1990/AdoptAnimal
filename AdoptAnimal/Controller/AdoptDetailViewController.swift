@@ -281,9 +281,29 @@ extension AdoptDetailViewController: UITableViewDataSource, UITableViewDelegate 
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdoptDetailTextCell", for: indexPath) as! AdoptDetailTextCell
             cell.subtitleTextLabel.text = "是否開放領養："
             if adopt != nil {
-                cell.descriptionLabel.text = adopt?.animalStatus
+                if adopt?.animalStatus == "NONE" {
+                    cell.descriptionLabel.text = "未公告"
+                } else if adopt?.animalStatus == "OPEN" {
+                    cell.descriptionLabel.text = "開放認養"
+                } else if adopt?.animalStatus == "ADOPTED" {
+                    cell.descriptionLabel.text = "已認養"
+                } else if adopt?.animalStatus == "OTHER" {
+                    cell.descriptionLabel.text = "其他"
+                } else {
+                    cell.descriptionLabel.text = "死亡"
+                }
             } else {
-                cell.descriptionLabel.text = adoptMO?.animalStatus
+                if adoptMO?.animalStatus == "NONE" {
+                    cell.descriptionLabel.text = "未公告"
+                } else if adoptMO?.animalStatus == "OPEN" {
+                    cell.descriptionLabel.text = "開放認養"
+                } else if adoptMO?.animalStatus == "ADOPTED" {
+                    cell.descriptionLabel.text = "已認養"
+                } else if adoptMO?.animalStatus == "OTHER" {
+                    cell.descriptionLabel.text = "其他"
+                } else {
+                    cell.descriptionLabel.text = "死亡"
+                }
             }
             cell.selectionStyle = .none
             
@@ -292,9 +312,17 @@ extension AdoptDetailViewController: UITableViewDataSource, UITableViewDelegate 
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdoptDetailTextCell", for: indexPath) as! AdoptDetailTextCell
             cell.subtitleTextLabel.text = "開放認養時間："
             if adopt != nil {
-                cell.descriptionLabel.text = adopt?.animalOpendate
+                if adopt?.animalOpendate != "" {
+                    cell.descriptionLabel.text = adopt?.animalOpendate
+                } else {
+                    cell.descriptionLabel.text = "未公告"
+                }
             } else {
-                cell.descriptionLabel.text = adoptMO?.animalOpendate
+                if adoptMO?.animalOpendate != "" {
+                    cell.descriptionLabel.text = adoptMO?.animalOpendate
+                } else {
+                    cell.descriptionLabel.text = "未公告"
+                }
             }
             cell.selectionStyle = .none
             
