@@ -10,6 +10,7 @@
 		700BF92324E5816E00BFC6EA /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 700BF92224E5816E00BFC6EA /* About.storyboard */; };
 		700BF92524E5923900BFC6EA /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700BF92424E5923900BFC6EA /* AboutTableViewController.swift */; };
 		700BF92724E5A71C00BFC6EA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700BF92624E5A71C00BFC6EA /* WebViewController.swift */; };
+		7013F0EC24EFC08A006CD337 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7013F0EB24EFC08A006CD337 /* UIView+Ext.swift */; };
 		7033B5AC24E2930F009B51C2 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033B5AB24E2930F009B51C2 /* CacheManager.swift */; };
 		7039249524E162BF00D219A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7039249424E162BF00D219A6 /* AppDelegate.swift */; };
 		7039249724E162BF00D219A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7039249624E162BF00D219A6 /* SceneDelegate.swift */; };
@@ -46,6 +47,7 @@
 		700BF92224E5816E00BFC6EA /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		700BF92424E5923900BFC6EA /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutTableViewController.swift; path = AdoptAnimal/Storyboard/AboutTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		700BF92624E5A71C00BFC6EA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = AdoptAnimal/Storyboard/WebViewController.swift; sourceTree = SOURCE_ROOT; };
+		7013F0EB24EFC08A006CD337 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		7033B5AB24E2930F009B51C2 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		7039249124E162BF00D219A6 /* AdoptAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdoptAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7039249424E162BF00D219A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				7039251824E1636D00D219A6 /* UINavigationController+Ext.swift */,
 				7039251924E1636D00D219A6 /* UIColor+Ext.swift */,
+				7013F0EB24EFC08A006CD337 /* UIView+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				7039252F24E1636D00D219A6 /* AdoptTableViewCell.swift in Sources */,
 				7039252D24E1636D00D219A6 /* SearchFooter.swift in Sources */,
 				7039253024E1636D00D219A6 /* UINavigationController+Ext.swift in Sources */,
+				7013F0EC24EFC08A006CD337 /* UIView+Ext.swift in Sources */,
 				7039253424E1636D00D219A6 /* AdoptDetailViewController.swift in Sources */,
 				7039249524E162BF00D219A6 /* AppDelegate.swift in Sources */,
 				7039253624E1636D00D219A6 /* AdoptDetailIconTextCell.swift in Sources */,

@@ -67,13 +67,8 @@ class AdoptViewController: UIViewController {
         if let customFont = UIFont(name: "Rubik-Medium", size: 40.0) {
             navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 231, green: 76, blue: 60), NSAttributedString.Key.font: customFont]
         }
-        spinner.style = .medium
-        spinner.hidesWhenStopped = true
-        view.addSubview(spinner)
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([spinner.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 150), spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor)])
         
-        spinner.startAnimating()
+        tableView.showLoading(style: .large, color: .gray, constant: -150)
         
         addDoneButton()
         
@@ -102,24 +97,6 @@ class AdoptViewController: UIViewController {
         let urlStr = "https://data.coa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL"
         guard let url = URL(string: urlStr) else { return }
         
-        //        AF.request(url).validate().responseJSON { (response) in
-        //            switch response.result {
-        //
-        //            case .success(let value):
-        //                let json = JSON(value)
-        //                let adoptArray = json.arrayValue
-        //                var adopts = [Adopt]()
-        //                for adoptJson in adoptArray {
-        //                    let adopt = Adopt(json: adoptJson)
-        //                    adopts.append(adopt)
-        //                }
-        //                self.spinner.stopAnimating()
-        //                self.adopts = adopts
-        //                            print(self.adopts)
-        //            case .failure(let error):
-        //                print(error)
-        //            }
-        //        }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             let decoder = JSONDecoder()
             if let data = data {
@@ -127,7 +104,7 @@ class AdoptViewController: UIViewController {
                     let adopts = try decoder.decode([Adopt].self, from: data)
                     self.adopts = adopts
                     DispatchQueue.main.async {
-                        self.spinner.stopAnimating()
+                        self.tableView.stopLoading()
                     }
                 } catch {
                     print(error)
@@ -276,6 +253,68 @@ extension AdoptViewController: UITableViewDataSource, UITableViewDelegate {
         cell.loadAdoptData(adopt: adopt)
         
         return cell
+    }
+    
+//    建立UIContextMenuConfiguration物件，物件包含了選單項目與預覽提供者
+    func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+//        使用所選動物的列數來做為識別碼。
+        let configuration = UIContextMenuConfiguration(identifier: indexPath.row as NSCopying, previewProvider: {
+            
+//            回傳預覽內容的自訂視圖控制器
+            guard let adoptDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "AdoptDetailViewController") as? AdoptDetailViewController else { return nil }
+            if self.isFiltering {
+                let selectedAdopt = self.filterAdopts[indexPath.row]
+                adoptDetailViewController.adopt = selectedAdopt
+            } else {
+                let selectedAdopt = self.adopts[indexPath.row]
+                adoptDetailViewController.adopt = selectedAdopt
+            }
+            
+            return adoptDetailViewController
+            
+        }) { action in
+            
+//            建立內容選單的選單項目的程式區塊
+            let shareAction = UIAction(title: "分享", image: UIImage(systemName: "square.and.arrow.up")) { action in
+                
+                let activityController: UIActivityViewController
+                if let selectCell = self.tableView.cellForRow(at: indexPath) as? AdoptTableViewCell, let adoptImage = selectCell.imageToShare {
+                    
+                    activityController = UIActivityViewController(activityItems: [adoptImage], applicationActivities: nil)
+                    
+                    self.present(activityController, animated: true, completion: nil)
+                }
+            }
+            
+            return UIMenu(title: "", children: [shareAction])
+        }
+        
+        return configuration
+    }
+    
+//    使用者按下預覽時顯示完整的內容
+    func tableView(_ tableView: UITableView, willPerformPreviewActionForMenuWith configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating) {
+        
+        guard let selectedRow = configuration.identifier as? Int else {
+            print("Failed to retrieve the row number")
+            return
+        }
+        
+        guard let adoptDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "AdoptDetailViewController") as? AdoptDetailViewController else { return }
+        
+        if self.isFiltering {
+            let selectedAdopt = self.filterAdopts[selectedRow]
+            adoptDetailViewController.adopt = selectedAdopt
+        } else {
+            let selectedAdopt = self.adopts[selectedRow]
+            adoptDetailViewController.adopt = selectedAdopt
+        }
+        
+        animator.preferredCommitStyle = .pop
+        animator.addCompletion {
+            self.show(adoptDetailViewController, sender: self)
+        }
     }
 }
 

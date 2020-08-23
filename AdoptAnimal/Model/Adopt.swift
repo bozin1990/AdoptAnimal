@@ -26,29 +26,6 @@ struct Adopt: Decodable {
     var cDate: String               //資料更新時間
     var shelterAddress: String? = nil      //地址
     var shelterTel: String             //連絡電話
-//    let category: Category
-    
-//    init(json: JSON) {
-//        self.animalId = json["animal_id"].intValue
-//        self.animalPlace = json["animal_place"].stringValue
-//        self.animalKind = json["animal_kind"].stringValue
-//        self.animalSex = json["animal_sex"].stringValue
-//        self.animalAge = json["animal_age"].stringValue
-//        self.animalSterilization = json["animal_sterilization"].stringValue
-//        self.animalBacterin = json["animal_bacterin"].stringValue
-//        self.animalFoundplace = json["animal_foundplace"].stringValue
-//        self.animalStatus = json["animal_status"].stringValue
-//        self.animalOpendate = json["animal_opendate"].stringValue
-//        self.animalCloseddate = json["animal_closeddate"].stringValue
-//        self.animalUpdate = json["animal_update"].stringValue
-//        self.animalCreatetime = json["animal_createtime"].stringValue
-//        self.shelterName = json["shelter_name"].stringValue
-//        self.albumFile = json["album_file"].stringValue
-//        self.cDate = json["cDate"].stringValue
-//        self.shelterAddress = json["shelter_address"].stringValue
-//        self.shelterTel = json["shelter_tel"].intValue
-//        
-//    }
     
     init(animalSubid: String, animalKind: AnimalKind, animalSex: String, animalColour: String, animalAge: String, animalSterilization: String, animalBacterin: String, animalFoundplace: String, animalStatus: String, animalRemark: String, animalOpendate: String, shelterName: String, albumFile: String, cDate: String, shelterAddress: String, shelterTel: String) {
         self.animalSubid = animalSubid

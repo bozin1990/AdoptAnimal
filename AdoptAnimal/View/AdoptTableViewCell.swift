@@ -29,6 +29,7 @@ class AdoptTableViewCell: UITableViewCell {
     @IBOutlet weak var animalSexImageView: UIImageView!
     
     private var currentAdopt: Adopt?
+    var imageToShare: UIImage?
     
     func loadAdoptData(adopt: Adopt) {
         
@@ -46,13 +47,20 @@ class AdoptTableViewCell: UITableViewCell {
                 animalSexImageView.image = UIImage(named: "question")
             }
         }
+        
         guard adopt.albumFile != "" else {
             adoptImageView.image = UIImage(named: "noImage")
+            
             return
         }
+        adoptImageView.showLoading(style: .medium, color: .black, constant: 0)
         
         if let image = CacheManager.shared.getFromCache(key: adopt.albumFile) as? UIImage {
+            
             adoptImageView.image = image
+            imageToShare = image
+            adoptImageView.stopLoading()
+
         } else {
             if let imageUrl = URL(string: adopt.albumFile) {
                 
@@ -65,6 +73,8 @@ class AdoptTableViewCell: UITableViewCell {
                         
                         if self.currentAdopt?.albumFile == adopt.albumFile {
                             self.adoptImageView.image = image
+                            self.imageToShare = image
+                            self.adoptImageView.stopLoading()
                         }
                         
                         CacheManager.shared.cache(object: image, key: adopt.albumFile)
