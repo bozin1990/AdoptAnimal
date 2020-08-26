@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		700BF92324E5816E00BFC6EA /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 700BF92224E5816E00BFC6EA /* About.storyboard */; };
 		700BF92524E5923900BFC6EA /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700BF92424E5923900BFC6EA /* AboutTableViewController.swift */; };
-		700BF92724E5A71C00BFC6EA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700BF92624E5A71C00BFC6EA /* WebViewController.swift */; };
 		7013F0EC24EFC08A006CD337 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7013F0EB24EFC08A006CD337 /* UIView+Ext.swift */; };
 		7033B5AC24E2930F009B51C2 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033B5AB24E2930F009B51C2 /* CacheManager.swift */; };
 		7039249524E162BF00D219A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7039249424E162BF00D219A6 /* AppDelegate.swift */; };
@@ -46,7 +45,6 @@
 /* Begin PBXFileReference section */
 		700BF92224E5816E00BFC6EA /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		700BF92424E5923900BFC6EA /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutTableViewController.swift; path = AdoptAnimal/Storyboard/AboutTableViewController.swift; sourceTree = SOURCE_ROOT; };
-		700BF92624E5A71C00BFC6EA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = AdoptAnimal/Storyboard/WebViewController.swift; sourceTree = SOURCE_ROOT; };
 		7013F0EB24EFC08A006CD337 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		7033B5AB24E2930F009B51C2 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		7039249124E162BF00D219A6 /* AdoptAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdoptAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,7 +196,6 @@
 		7039252124E1636D00D219A6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				700BF92624E5A71C00BFC6EA /* WebViewController.swift */,
 				700BF92424E5923900BFC6EA /* AboutTableViewController.swift */,
 				70ADC82724E310E900D8C017 /* MyFavoriteTableViewController.swift */,
 				7039251E24E1636D00D219A6 /* AdoptDetailViewController.swift */,
@@ -291,7 +288,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7033B5AC24E2930F009B51C2 /* CacheManager.swift in Sources */,
-				700BF92724E5A71C00BFC6EA /* WebViewController.swift in Sources */,
 				70ADC82624E310D400D8C017 /* MyFavoriteTableViewCell.swift in Sources */,
 				7039252F24E1636D00D219A6 /* AdoptTableViewCell.swift in Sources */,
 				7039252D24E1636D00D219A6 /* SearchFooter.swift in Sources */,
@@ -453,13 +449,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7B4C4DSQ93;
 				INFOPLIST_FILE = AdoptAnimal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Bozin.AdoptAnimal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -472,13 +470,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7B4C4DSQ93;
 				INFOPLIST_FILE = AdoptAnimal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Bozin.AdoptAnimal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

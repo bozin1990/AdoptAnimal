@@ -21,12 +21,13 @@ class MyFavoriteTableViewController: UITableViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         if let customFont = UIFont(name: "Rubik-Medium", size: 40) {
-            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 231, green: 76, blue: 60), NSAttributedString.Key.font: customFont]
+            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 30, green: 136, blue: 229), NSAttributedString.Key.font: customFont]
         }
         
         //         從資料儲存區中讀取資料
         let fetchRequest: NSFetchRequest<AdoptMO> = AdoptMO.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "shelterName", ascending: true)
+//        ascending設定false為降冪
+        let sortDescriptor = NSSortDescriptor(key: "insertDate", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
@@ -44,23 +45,6 @@ class MyFavoriteTableViewController: UITableViewController {
                 print(error)
             }
         }
-    }
-    
-    @IBAction func isFavoriteAdopt(_ sender: Any) {
-
-//        if let appDelegate = UIApplication.shared.delegate as? AppDelegate, let indexPath = tableView.indexPathForSelectedRow, let cell = tableView.cellForRow(at: indexPath) as? MyFavoriteTableViewCell {
-//            let context = appDelegate.persistentContainer.viewContext
-//            let adoptToDelete = fetchResultController.object(at: indexPath)
-//            context.delete(adoptToDelete)
-//
-//            adopts[indexPath.row].isFavorite = false
-//
-//            cell.isFavoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
-//            cell.isFavoriteButton.tintColor = .lightGray
-//
-//            appDelegate.saveContext()
-//        }
-
     }
     
     // MARK: - Table view data source

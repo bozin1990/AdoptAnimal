@@ -24,7 +24,7 @@ class AboutTableViewController: UITableViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         if let customFont = UIFont(name: "Rubik-Medium", size: 40) {
-            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 231, green: 76, blue: 60), NSAttributedString.Key.font: customFont]
+            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 30, green: 136, blue: 229), NSAttributedString.Key.font: customFont]
         }
         
         tableView.tableFooterView = UIView()

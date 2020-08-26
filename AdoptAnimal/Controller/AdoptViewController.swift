@@ -52,7 +52,7 @@ class AdoptViewController: UIViewController {
         searchController.searchBar.placeholder = "請輸入地址或花色"
         searchController.searchBar.backgroundImage = UIImage()
         searchController.searchBar.barTintColor = .white
-        searchController.searchBar.tintColor = UIColor(red: 231, green: 76, blue: 60)
+        searchController.searchBar.tintColor = UIColor(red: 30, green: 136, blue: 229)
         searchController.searchBar.scopeButtonTitles = Adopt.AnimalKind.allCases.map { $0.rawValue }
         searchController.searchBar.delegate = self
         searchController.searchBar.setValue("取消", forKey: "cancelButtonText")
@@ -65,7 +65,7 @@ class AdoptViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         
         if let customFont = UIFont(name: "Rubik-Medium", size: 40.0) {
-            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 231, green: 76, blue: 60), NSAttributedString.Key.font: customFont]
+            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 30, green: 136, blue: 229), NSAttributedString.Key.font: customFont]
         }
         
         tableView.showLoading(style: .large, color: .gray, constant: -150)
@@ -116,7 +116,7 @@ class AdoptViewController: UIViewController {
     func addDoneButton() {
         let toolBar = UIToolbar()
         let doneButton = UIBarButtonItem(title: "完成", style: .done, target: self, action: #selector(doneButtonPressed))
-        doneButton.tintColor = UIColor(red: 231, green: 76, blue: 60)
+        doneButton.tintColor = UIColor(red: 30, green: 136, blue: 229)
         let titleLabel = UILabel()
         titleLabel.frame = view.bounds
         titleLabel.textColor = .lightGray
@@ -208,7 +208,8 @@ class AdoptViewController: UIViewController {
     }
     
     @IBAction func scrollToTop(_ sender: UIButton) {
-        tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+//        tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

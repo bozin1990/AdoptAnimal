@@ -160,6 +160,7 @@ class AdoptDetailViewController: UIViewController {
             adoptMO?.animalSterilization = adopt?.animalSterilization
             adoptMO?.animalSubid = adopt?.animalSubid
             adoptMO?.cDate = adopt?.cDate
+            adoptMO?.insertDate = Date()
             adoptMO?.isFavorite = true
             
             if let adoptImage = imageToShare {

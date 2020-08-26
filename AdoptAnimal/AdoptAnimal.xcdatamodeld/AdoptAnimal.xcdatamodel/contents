@@ -14,12 +14,13 @@
         <attribute name="animalSterilization" optional="YES" attributeType="String"/>
         <attribute name="animalSubid" optional="YES" attributeType="String"/>
         <attribute name="cDate" optional="YES" attributeType="String"/>
+        <attribute name="insertDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="shelterAddress" optional="YES" attributeType="String"/>
         <attribute name="shelterName" optional="YES" attributeType="String"/>
         <attribute name="shelterTel" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Adopt" positionX="-63" positionY="-18" width="128" height="298"/>
+        <element name="Adopt" positionX="-63" positionY="-18" width="128" height="313"/>
     </elements>
 </model>
