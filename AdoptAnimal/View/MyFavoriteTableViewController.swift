@@ -8,10 +8,15 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 class MyFavoriteTableViewController: UITableViewController {
     
-    var adopts: [AdoptMO] = []
+    var adopts = [AdoptMO]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     var fetchResultController: NSFetchedResultsController<AdoptMO>!
     
     override func viewDidLoad() {
@@ -26,7 +31,7 @@ class MyFavoriteTableViewController: UITableViewController {
         
         //         從資料儲存區中讀取資料
         let fetchRequest: NSFetchRequest<AdoptMO> = AdoptMO.fetchRequest()
-//        ascending設定false為降冪
+        //        ascending設定false為降冪
         let sortDescriptor = NSSortDescriptor(key: "insertDate", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
@@ -45,6 +50,8 @@ class MyFavoriteTableViewController: UITableViewController {
                 print(error)
             }
         }
+        
+        prepareNotification()
     }
     
     // MARK: - Table view data source
@@ -95,16 +102,39 @@ class MyFavoriteTableViewController: UITableViewController {
         
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    func prepareNotification() {
+        //        確認動物陣列不為空值
+        if adopts.count <= 0 {
+            return
+        }
+        //        隨機選擇動物
+        let randomNum = Int.random(in: 0..<adopts.count)
+        let suggestedAdopt = adopts[randomNum]
+        
+        //        建立使用者通知
+        let content = UNMutableNotificationContent()
+        content.title = "您收藏的浪浪"
+        content.subtitle = "來看看可愛的毛孩吧！"
+        let tempDirURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+        let tempFileURL = tempDirURL.appendingPathComponent("suggested-adoptAnimal.jpg")
+        if let imageData = suggestedAdopt.albumFile {
+            let image = UIImage(data: imageData)
+            
+            try? image?.jpegData(compressionQuality: 1.0)?.write(to: tempFileURL)
+            if let adoptImage = try? UNNotificationAttachment(identifier: "adoptImage", url: tempFileURL, options: nil) {
+                content.attachments = [adoptImage]
+            }
+        }
+        
+        content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 259200, repeats: false)
+        let request = UNNotificationRequest(identifier: "adoptAnimal.adoptSuggestion", content: content, trigger: trigger)
+        
+        //        排定通知
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+    }
 }
 
 extension MyFavoriteTableViewController: NSFetchedResultsControllerDelegate {

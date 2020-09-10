@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gsz-GM-CIm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gsz-GM-CIm">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Rubik-Bold.ttf">
+            <string>Rubik-Bold</string>
+        </array>
         <array key="Rubik-Light.ttf">
             <string>Rubik-Light</string>
         </array>
@@ -164,7 +167,7 @@
             <objects>
                 <viewController storyboardIdentifier="AdoptDetailViewController" id="zsS-KG-OHB" customClass="AdoptDetailViewController" customModule="AdoptAnimal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7xC-yG-FYB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Leo-Ru-QhW" userLabel="Header View" customClass="AdoptDetailHeaderView" customModule="AdoptAnimal" customModuleProvider="target">
@@ -253,7 +256,7 @@
                             </connections>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="GR8-c2-9Lr">
-                            <rect key="frame" x="0.0" y="499" width="375" height="90"/>
+                            <rect key="frame" x="0.0" y="757.66666793823242" width="375" height="90"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7D-Sl-JoL">
@@ -359,6 +362,69 @@
                                     <outlet property="subtitleTextLabel" destination="DPg-op-7Th" id="wIz-Tl-Yt6"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AdoptDetailSeparatorCell" id="RBM-mI-2No" userLabel="AdoptDetailSeparatorCell" customClass="AdoptDetailSeparatorCell" customModule="AdoptAnimal" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="471" width="375" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RBM-mI-2No" id="Yz8-gV-L7d">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Rnu-Ui-CQt">
+                                            <rect key="frame" x="18" y="5.3333333333333339" width="339" height="26.333333333333329"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subsection Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbH-2W-UVW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="339" height="20.333333333333332"/>
+                                                    <fontDescription key="fontDescription" name="Rubik-Bold" family="Rubik" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ynd-RX-4MR" userLabel="Separator">
+                                                    <rect key="frame" x="0.0" y="25.333333333333332" width="339" height="1"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="4ix-LI-tMu"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Rnu-Ui-CQt" secondAttribute="bottom" constant="12" id="Wpu-vx-5VY"/>
+                                        <constraint firstItem="Rnu-Ui-CQt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Yz8-gV-L7d" secondAttribute="top" constant="5" id="chn-TO-hA0"/>
+                                        <constraint firstItem="Rnu-Ui-CQt" firstAttribute="leading" secondItem="Yz8-gV-L7d" secondAttribute="leading" constant="18" id="et2-kh-q3i"/>
+                                        <constraint firstAttribute="trailing" secondItem="Rnu-Ui-CQt" secondAttribute="trailing" constant="18" id="kOm-XM-3yL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="dbH-2W-UVW" id="wNf-Mb-vPB"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AdoptDetailMapCell" rowHeight="215" id="li5-L5-4Vc" customClass="AdoptDetailMapCell" customModule="AdoptAnimal" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="514.66666793823242" width="375" height="215"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="li5-L5-4Vc" id="m2h-b6-5ar">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Smb-HD-6a2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="215" id="bQp-Jc-Mwp"/>
+                                            </constraints>
+                                        </mapView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Smb-HD-6a2" secondAttribute="bottom" id="7u1-vP-Mtd"/>
+                                        <constraint firstItem="Smb-HD-6a2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="m2h-b6-5ar" secondAttribute="top" id="8G6-A0-dCy"/>
+                                        <constraint firstAttribute="trailing" secondItem="Smb-HD-6a2" secondAttribute="trailing" id="NqX-Fw-ihj"/>
+                                        <constraint firstItem="Smb-HD-6a2" firstAttribute="leading" secondItem="m2h-b6-5ar" secondAttribute="leading" id="TfY-jq-psp"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="mapView" destination="Smb-HD-6a2" id="gYT-xb-4Vr"/>
+                                    <segue destination="PAG-tL-lxr" kind="presentation" identifier="showMap" modalPresentationStyle="fullScreen" id="cU1-9E-LHL"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title=" " id="WMw-VQ-mw1">
@@ -368,6 +434,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="headerView" destination="Leo-Ru-QhW" id="wOM-gF-Ix2"/>
                         <outlet property="tableView" destination="7xC-yG-FYB" id="SRw-q1-ZSS"/>
@@ -376,6 +443,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9eJ-mO-B5l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2983.1999999999998" y="-19.211822660098523"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="CZN-LY-ZZg">
+            <objects>
+                <viewController id="PAG-tL-lxr" customClass="MapViewController" customModule="AdoptAnimal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ayB-m5-EWf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="94d-NI-L3R">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qv-1l-IFx">
+                                <rect key="frame" x="324" y="44" width="31" height="29"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="xmark" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="PAG-tL-lxr" eventType="touchUpInside" id="E0F-gy-OFo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="94d-NI-L3R" secondAttribute="bottom" id="0Gf-Xk-oIm"/>
+                            <constraint firstItem="94d-NI-L3R" firstAttribute="trailing" secondItem="Qhs-GU-JEl" secondAttribute="trailing" id="Gmj-ln-G8u"/>
+                            <constraint firstItem="94d-NI-L3R" firstAttribute="top" secondItem="ayB-m5-EWf" secondAttribute="top" id="N9m-EI-YNW"/>
+                            <constraint firstItem="94d-NI-L3R" firstAttribute="leading" secondItem="Qhs-GU-JEl" secondAttribute="leading" id="m0o-ne-Xsk"/>
+                            <constraint firstItem="Qhs-GU-JEl" firstAttribute="trailing" secondItem="3qv-1l-IFx" secondAttribute="trailing" constant="20" id="pCT-MF-4np"/>
+                            <constraint firstItem="3qv-1l-IFx" firstAttribute="top" secondItem="Qhs-GU-JEl" secondAttribute="top" id="xze-y3-WQ2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qhs-GU-JEl"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="waL-uk-EXr"/>
+                    <connections>
+                        <outlet property="mapView" destination="94d-NI-L3R" id="2bf-bY-yUe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hGk-z3-BGn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4196" y="23.645320197044335"/>
         </scene>
         <!--清單-->
         <scene sceneID="DFK-dk-BFl">
@@ -436,12 +545,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chevron.up.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="heart.fill" catalog="system" width="64" height="54"/>
-        <image name="list.dash" catalog="system" width="64" height="42"/>
+        <image name="chevron.up.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="male" width="48" height="48"/>
         <image name="noImage" width="450" height="313"/>
-        <image name="phone" catalog="system" width="64" height="56"/>
-        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
+        <image name="phone" catalog="system" width="128" height="115"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>
 </document>

@@ -130,7 +130,15 @@ class AdoptDetailViewController: UIViewController {
         guard adopt != nil else {
             return
         }
-        
+        guard adopt?.animalSubid != adoptMO?.animalSubid else {
+            
+            let alertController = UIAlertController(title: "提醒您", message: "浪浪已經在收藏裡囉！", preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: "確認", style: .cancel, handler: nil)
+            alertController.addAction(okayAction)
+            present(alertController, animated: true, completion: nil)
+            
+            return
+        }
         saveToCoreData()
         
         let alertController = UIAlertController(title: "添加成功😻", message: "浪浪已加入到收藏頁面", preferredStyle: .alert)
@@ -172,11 +180,23 @@ class AdoptDetailViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMap" {
+            let destinationController = segue.destination as! MapViewController
+            guard adopt != nil else {
+                destinationController.adoptMO = adoptMO
+
+                return
+            }
+            destinationController.adopt = adopt
+        }
+    }
+    
 }
 
 extension AdoptDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 12
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -218,9 +238,17 @@ extension AdoptDetailViewController: UITableViewDataSource, UITableViewDelegate 
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdoptDetailIconTextCell", for: indexPath) as! AdoptDetailIconTextCell
             cell.iconImageView.image = UIImage(systemName: "map")?.withRenderingMode(.alwaysOriginal)
             if adopt != nil {
-                cell.shortTextLabel.text = adopt?.shelterAddress
+                if let deRange = adopt?.shelterAddress?.range(of: "(") {
+                    cell.shortTextLabel.text = "\(adopt?.shelterAddress?.prefix(upTo: deRange.lowerBound) ?? "")"
+                } else {
+                    cell.shortTextLabel.text = adopt?.shelterAddress
+                }
             } else {
-                cell.shortTextLabel.text = adoptMO?.shelterAddress
+                if let deRange = adoptMO?.shelterAddress?.range(of: "(") {
+                    cell.shortTextLabel.text = "\(adoptMO?.shelterAddress?.prefix(upTo: deRange.lowerBound) ?? "")"
+                } else {
+                    cell.shortTextLabel.text = adoptMO?.shelterAddress
+                }
             }
             cell.selectionStyle = .none
             
@@ -337,6 +365,30 @@ extension AdoptDetailViewController: UITableViewDataSource, UITableViewDelegate 
                 cell.descriptionLabel.text = adoptMO?.cDate
             }
             cell.selectionStyle = .none
+            
+            return cell
+        case 10:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AdoptDetailSeparatorCell", for: indexPath) as! AdoptDetailSeparatorCell
+            cell.titleLabel.text = "如何到這裡"
+            cell.selectionStyle = .none
+            
+            return cell
+        case 11:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AdoptDetailMapCell", for: indexPath) as! AdoptDetailMapCell
+            cell.selectionStyle = .none
+            
+            guard adopt != nil else {
+                
+                if let adoptLocation = adoptMO?.shelterAddress {
+                    cell.configure(location: adoptLocation)
+                }
+                
+                return cell
+            }
+            
+            if let adoptLocation = adopt?.shelterAddress {
+                cell.configure(location: adoptLocation)
+            }
             
             return cell
         default:

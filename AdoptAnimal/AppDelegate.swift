@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarAppearance = UITabBar.appearance()
         tabBarAppearance.tintColor = UIColor(red: 30, green: 136, blue: 229)
         tabBarAppearance.backgroundColor = UIColor(red: 250, green: 250, blue: 250)
+        
+//        要求能夠顯示提示、播放聲音，並更新 App 的圖示右上角的數字通知
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            
+            if granted {
+                print("User notifications are allowed.")
+            } else {
+                print("User notifications are not allowed.")
+            }
+        }
         
         return true
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AdoptViewController: UIViewController {
     
@@ -99,6 +100,18 @@ class AdoptViewController: UIViewController {
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             let decoder = JSONDecoder()
+          
+            if error != nil {
+                let alertController = UIAlertController(title: "提醒您", message: "目前網路或資料異常，請稍後再試", preferredStyle: .alert)
+                let okayAction = UIAlertAction(title: "確定", style: .cancel, handler: nil)
+                alertController.addAction(okayAction)
+                DispatchQueue.main.async {
+                    self.tableView.stopLoading()
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                
+                return
+            }
             if let data = data {
                 do {
                     let adopts = try decoder.decode([Adopt].self, from: data)
@@ -206,6 +219,8 @@ class AdoptViewController: UIViewController {
             hideFloatingButton()
         }
     }
+    
+    
     
     @IBAction func scrollToTop(_ sender: UIButton) {
 //        tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)

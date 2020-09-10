@@ -35,8 +35,12 @@ class AdoptTableViewCell: UITableViewCell {
         
         currentAdopt = adopt
         
+        if let deRange = adopt.shelterAddress?.range(of: "(") {
+            shelterAddress.text = "\(adopt.shelterAddress?.prefix(upTo: deRange.lowerBound) ?? "")"
+        } else {
+            shelterAddress.text = adopt.shelterAddress
+        }
         animalColor.text = adopt.animalColour
-        shelterAddress.text = adopt.shelterAddress
         animalKind.text = adopt.animalKind.rawValue
         if let animalSex = adopt.animalSex {
             if animalSex == "M" {
@@ -60,7 +64,7 @@ class AdoptTableViewCell: UITableViewCell {
             adoptImageView.image = image
             imageToShare = image
             adoptImageView.stopLoading()
-
+            
         } else {
             if let imageUrl = URL(string: adopt.albumFile) {
                 

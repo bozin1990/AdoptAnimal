@@ -36,10 +36,14 @@
 		7039253424E1636D00D219A6 /* AdoptDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7039251E24E1636D00D219A6 /* AdoptDetailViewController.swift */; };
 		7039253524E1636D00D219A6 /* AdoptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7039251F24E1636D00D219A6 /* AdoptViewController.swift */; };
 		7039253624E1636D00D219A6 /* AdoptDetailIconTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7039252024E1636D00D219A6 /* AdoptDetailIconTextCell.swift */; };
+		7049814E24F96CFA0026A062 /* AdoptDetailSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7049814D24F96CFA0026A062 /* AdoptDetailSeparatorCell.swift */; };
+		7049815024F96D1F0026A062 /* AdoptDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7049814F24F96D1F0026A062 /* AdoptDetailMapCell.swift */; };
+		7049815324F96D770026A062 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7049815224F96D770026A062 /* MapKit.framework */; };
 		70ADC82424E3035200D8C017 /* MyFavorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70ADC82324E3035200D8C017 /* MyFavorite.storyboard */; };
 		70ADC82624E310D400D8C017 /* MyFavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ADC82524E310D400D8C017 /* MyFavoriteTableViewCell.swift */; };
 		70ADC82824E310E900D8C017 /* MyFavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ADC82724E310E900D8C017 /* MyFavoriteTableViewController.swift */; };
 		70ADC82B24E31E4A00D8C017 /* AdoptAnimal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70ADC82924E31E4A00D8C017 /* AdoptAnimal.xcdatamodeld */; };
+		70BA95B124FCE7FA0097BA6C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BA95B024FCE7FA0097BA6C /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +51,7 @@
 		700BF92424E5923900BFC6EA /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutTableViewController.swift; path = AdoptAnimal/Storyboard/AboutTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		7013F0EB24EFC08A006CD337 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		7033B5AB24E2930F009B51C2 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
-		7039249124E162BF00D219A6 /* AdoptAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdoptAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7039249124E162BF00D219A6 /* 領養平台.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "領養平台.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7039249424E162BF00D219A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7039249624E162BF00D219A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7039249D24E162C000D219A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,10 +78,14 @@
 		7039251E24E1636D00D219A6 /* AdoptDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdoptDetailViewController.swift; sourceTree = "<group>"; };
 		7039251F24E1636D00D219A6 /* AdoptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdoptViewController.swift; sourceTree = "<group>"; };
 		7039252024E1636D00D219A6 /* AdoptDetailIconTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdoptDetailIconTextCell.swift; sourceTree = "<group>"; };
+		7049814D24F96CFA0026A062 /* AdoptDetailSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDetailSeparatorCell.swift; sourceTree = SOURCE_ROOT; };
+		7049814F24F96D1F0026A062 /* AdoptDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDetailMapCell.swift; sourceTree = "<group>"; };
+		7049815224F96D770026A062 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		70ADC82324E3035200D8C017 /* MyFavorite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyFavorite.storyboard; sourceTree = "<group>"; };
 		70ADC82524E310D400D8C017 /* MyFavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyFavoriteTableViewCell.swift; path = AdoptAnimal/Storyboard/MyFavoriteTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		70ADC82724E310E900D8C017 /* MyFavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyFavoriteTableViewController.swift; path = AdoptAnimal/View/MyFavoriteTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		70ADC82A24E31E4A00D8C017 /* AdoptAnimal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AdoptAnimal.xcdatamodel; sourceTree = "<group>"; };
+		70BA95B024FCE7FA0097BA6C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = AdoptAnimal/Storyboard/MapViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7049815324F96D770026A062 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,13 +105,14 @@
 			children = (
 				7039249324E162BF00D219A6 /* AdoptAnimal */,
 				7039249224E162BF00D219A6 /* Products */,
+				7049815124F96D770026A062 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		7039249224E162BF00D219A6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7039249124E162BF00D219A6 /* AdoptAnimal.app */,
+				7039249124E162BF00D219A6 /* 領養平台.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +173,8 @@
 		7039251324E1636D00D219A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7049814D24F96CFA0026A062 /* AdoptDetailSeparatorCell.swift */,
+				7049814F24F96D1F0026A062 /* AdoptDetailMapCell.swift */,
 				70ADC82524E310D400D8C017 /* MyFavoriteTableViewCell.swift */,
 				7039251B24E1636D00D219A6 /* AdoptDetailHeaderView.swift */,
 				7039251424E1636D00D219A6 /* SearchFooter.swift */,
@@ -196,12 +208,21 @@
 		7039252124E1636D00D219A6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				70BA95B024FCE7FA0097BA6C /* MapViewController.swift */,
 				700BF92424E5923900BFC6EA /* AboutTableViewController.swift */,
 				70ADC82724E310E900D8C017 /* MyFavoriteTableViewController.swift */,
 				7039251E24E1636D00D219A6 /* AdoptDetailViewController.swift */,
 				7039251F24E1636D00D219A6 /* AdoptViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		7049815124F96D770026A062 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7049815224F96D770026A062 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +242,7 @@
 			);
 			name = AdoptAnimal;
 			productName = AdoptAnimal;
-			productReference = 7039249124E162BF00D219A6 /* AdoptAnimal.app */;
+			productReference = 7039249124E162BF00D219A6 /* 領養平台.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -291,6 +312,8 @@
 				70ADC82624E310D400D8C017 /* MyFavoriteTableViewCell.swift in Sources */,
 				7039252F24E1636D00D219A6 /* AdoptTableViewCell.swift in Sources */,
 				7039252D24E1636D00D219A6 /* SearchFooter.swift in Sources */,
+				7049815024F96D1F0026A062 /* AdoptDetailMapCell.swift in Sources */,
+				7049814E24F96CFA0026A062 /* AdoptDetailSeparatorCell.swift in Sources */,
 				7039253024E1636D00D219A6 /* UINavigationController+Ext.swift in Sources */,
 				7013F0EC24EFC08A006CD337 /* UIView+Ext.swift in Sources */,
 				7039253424E1636D00D219A6 /* AdoptDetailViewController.swift in Sources */,
@@ -298,6 +321,7 @@
 				7039253624E1636D00D219A6 /* AdoptDetailIconTextCell.swift in Sources */,
 				7039252224E1636D00D219A6 /* Adopt.swift in Sources */,
 				7039253524E1636D00D219A6 /* AdoptViewController.swift in Sources */,
+				70BA95B124FCE7FA0097BA6C /* MapViewController.swift in Sources */,
 				70ADC82B24E31E4A00D8C017 /* AdoptAnimal.xcdatamodeld in Sources */,
 				700BF92524E5923900BFC6EA /* AboutTableViewController.swift in Sources */,
 				7039253124E1636D00D219A6 /* UIColor+Ext.swift in Sources */,
@@ -449,17 +473,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 7B4C4DSQ93;
 				INFOPLIST_FILE = AdoptAnimal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Bozin.AdoptAnimal;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "領養平台";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -470,17 +494,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 7B4C4DSQ93;
 				INFOPLIST_FILE = AdoptAnimal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Bozin.AdoptAnimal;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "領養平台";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
